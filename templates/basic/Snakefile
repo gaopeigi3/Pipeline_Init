@@ -1,0 +1,21 @@
+configfile: "config/config.yaml"
+
+rule all:
+    input:
+        "data/tokenized/done.txt"
+
+rule preprocess:
+    input:
+        config["input"]
+    output:
+        "data/interim/preprocessed.h5ad"
+    shell:
+        "echo preprocess > {output}"
+
+rule tokenize:
+    input:
+        "data/interim/preprocessed.h5ad"
+    output:
+        "data/tokenized/done.txt"
+    shell:
+        "echo tokenize > {output}"
