@@ -11,6 +11,8 @@ def main():
 
     folders = [
         "config",
+        "docs",
+        "notebooks",
         "workflow/rules",
         "data/raw",
         "data/interim",
@@ -22,8 +24,7 @@ def main():
     for f in folders:
         (root / f).mkdir(parents=True, exist_ok=True)
 
-    template_dir = Path(__file__).parent.parent / "templates/basic"
-
+    template_dir = Path(__file__).parent / "templates/basic"
     shutil.copy(template_dir / "Snakefile", root / "Snakefile")
     shutil.copy(template_dir / "config.yaml", root / "config/config.yaml")
 
