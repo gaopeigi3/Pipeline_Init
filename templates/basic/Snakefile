@@ -10,7 +10,8 @@ rule preprocess:
     output:
         "data/interim/preprocessed.h5ad"
     shell:
-        "echo preprocess > {output}"
+        "echo preprocess for __PROJECT_NAME__ > {output}"
+
 
 rule tokenize:
     input:
