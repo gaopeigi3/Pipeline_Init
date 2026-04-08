@@ -25,6 +25,7 @@ def main():
         "docs",
         "notebooks",
         "workflow/rules",
+        "workflow/scripts",
         "data/raw",
         "data/interim",
         "data/tokenized",
