@@ -1,0 +1,35 @@
+project:
+  name: "{{ PROJECT_NAME }}"
+  author: "{{ AUTHOR }}"
+  date: "{{ DATE }}"
+
+data:
+  input_h5ad: "data/raw/input.h5ad"
+  output_h5ad: "results/processed.h5ad"
+
+embedding:
+  scope: "global"   # global | subset
+
+slicing:
+  structural:   # 改变空间的 slicing（cell-type）
+    enabled: false
+    filters:
+      cell_type:
+        - "HSCLSC"
+        - "MPPCLP"
+
+analysis_subset: 
+  condition:
+    treat: ["pre", "post"]
+    response: ["responder", "nonresponder"]
+
+preprocessing:
+  remove_mt: true
+  remove_ribo: true
+  min_genes: 200
+  min_cells: 3
+
+representation:
+  n_pcs: 50
+  n_neighbors: 15
+  min_dist: 0.5

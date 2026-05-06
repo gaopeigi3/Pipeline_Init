@@ -61,12 +61,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", required=True)
     parser.add_argument("--template", default="basic")
+    parser.add_argument("--output_dir", default="..")
     args = parser.parse_args()
 
     project_name = args.name
     template_name = args.template
 
-    root = Path(project_name)
+    output_base = Path(args.output_dir).resolve()
+    root = output_base / project_name
     root.mkdir(exist_ok=True)
 
     template_root = Path(__file__).parent / "templates"
@@ -88,23 +90,6 @@ def main():
 
 
 
-
-
-    folders = [
-        "config",
-        "docs",
-        "notebooks",
-        "workflow/rules",
-        "workflow/scripts",
-        "data/raw",
-        "data/interim",
-        "data/tokenized",
-        "results",
-        "logs"
-    ]
-
-    for f in folders:
-        (root / f).mkdir(parents=True, exist_ok=True)
 
 
 

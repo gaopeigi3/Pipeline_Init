@@ -1,7 +1,10 @@
-project_name: "{{ PROJECT_NAME }}"
-author: "{{ AUTHOR }}"
-date: "{{ DATE }}"
 
-data_dir: "data/raw"
-output_dir: "results"
-log_dir: "logs"
+project:
+  name: "{{ PROJECT_NAME }}"
+  author: "{{ AUTHOR }}"
+  date: "{{ DATE }}"
+
+data:
+  input_dir: "data/raw"
+  output_h5ad: "results"
+  log_dir: "logs"
