@@ -3,6 +3,38 @@
 Author: {{ AUTHOR }}  
 Date: {{ DATE }}
 
+
+
+# project contract
+
+Input
+AnnData (.h5ad)
+
+required obs:
+- sample
+- batch
+
+optional:
+- patient
+- condition
+Output
+obs:
+- celltype
+- celltype_confidence
+- annotation_source
+- annotation_version
+
+uns:
+- celltype_colors
+- annotation_metadata
+Guarantee
+- reproducible
+- deterministic
+- resumable
+- configurable
+
+
+
 ## Workflow
 raw.h5ad
  ↓
@@ -72,7 +104,7 @@ uns:
   embedding_scope
 
 
-  
+
 
 ## Run
 
