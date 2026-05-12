@@ -30,16 +30,6 @@ ISP 和 DEG 是耦合还是解耦
 
 
 
-一个好的脚手架意味着：
-新项目启动更快
-错误更少
-思路更清晰
-👉 在给未来的自己降低成本
-👉 这是一种杠杆能力，不是一次性输出。
-
-
-
-
 
 
 路径 A（你现在的直觉）
@@ -77,7 +67,7 @@ process_template_dir(env_tpl, tpl_dir, root, context)
 
 
 
-
+python create_project.py --name project_DEG  --template basic --output_dir ~/projects
 
 
 
